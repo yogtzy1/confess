@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ff7aa2, #ffd1dc);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Progress bar */
+.progress {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 4px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  background: white;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+/* Story */
+.story {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  display: none;
+  padding: 40px;
+  text-align: center;
+  font-size: 26px;
+  color: white;
+  animation: fade 0.5s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+button {
+  padding: 14px 26px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  background: white;
+  color: #ff4f87;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Tombol kabur */
+#noBtn {
+  position: relative;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
