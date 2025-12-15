@@ -10,13 +10,19 @@
 
 <div class="container" id="confess">
   <h1>Eh aku mau bilang sesuatu...</h1>
-  <p>sebenernya a-aku suka sama k-kamu hhe, maaf ya blak blak an gini</p>
 
-  <div class="buttons">
+  <p id="fullText" class="hidden">
+    sebenernya a-aku suka sama k-kamu hhe, maaf ya blak blak an gini
+  </p>
+
+  <button class="readmore" id="readBtn" onclick="baca()">Baca selengkapnya</button>
+
+  <div class="buttons hidden" id="choice">
     <button class="yes" onclick="terima()">Ya ❤️</button>
     <button class="no" id="noBtn">Tidak 😢</button>
   </div>
 </div>
+
 
 <!-- AUDIO -->
 <audio id="music" loop>
