@@ -1,9 +1,7 @@
-/* === ELEMENT === */
 const music = document.getElementById("music");
 const noBtn = document.getElementById("noBtn");
 const container = document.getElementById("confess");
 
-/* === STATE === */
 let kaburCount = 0;
 
 /* === BACA SELENGKAPNYA === */
@@ -15,11 +13,9 @@ function baca(){
 
 /* === JIKA YA === */
 function terima(){
-  // Play music (aman karena user interaction)
   music.currentTime = 0;
-  music.play().catch(() => {});
+  music.play().catch(()=>{});
 
-  // Ganti isi card
   container.innerHTML = `
     <h1>❤️ AKU BAHAGIA ❤️</h1>
     <p>
