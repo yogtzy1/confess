@@ -17,12 +17,13 @@ function terima(){
   music.play().catch(()=>{});
 
   container.innerHTML = `
-    <h1>❤️ AKU BAHAGIA ❤️</h1>
+    <h1>TIMAA ACII UDA NEIMA</h1>
     <p>
-      Terima kasih sudah memilih aku.<br>
-      Aku janji bakal jaga kamu,<br>
-      nemenin kamu,<br>
-      dan jatuh cinta berkali-kali sama orang yang sama 🤍
+      akuuu janji ga bakal sia' in kesempatan ini<br>
+      akuuu bakal usahain apapun buat kamu,<br>
+      akuuu bakal selalu ada buat kamu,<br>
+      dan akuu bakal selalu sayangg samaa kamuu,<br>
+      SEKALI LAGI AKU MAU BILA TERIMAA KASIII YAA
     </p>
   `;
 }
