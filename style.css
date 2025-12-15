@@ -14,7 +14,6 @@ body{
   color:white;
 }
 
-/* === CARD === */
 .container{
   background:rgba(255,255,255,.15);
   padding:35px;
@@ -25,7 +24,6 @@ body{
   box-shadow:0 20px 40px rgba(0,0,0,.2);
 }
 
-/* === TEXT === */
 h1{
   margin-bottom:15px;
 }
@@ -35,14 +33,12 @@ p{
   margin-bottom:25px;
 }
 
-/* === BUTTON GROUP === */
 .buttons{
   display:flex;
   gap:20px;
   justify-content:center;
 }
 
-/* === ALL BUTTON === */
 button{
   padding:12px 24px;
   border:none;
@@ -56,7 +52,6 @@ button:hover{
   transform:scale(1.05);
 }
 
-/* === BUTTON VARIANT === */
 .yes{
   background:#fff;
   color:#ff4f87;
@@ -67,25 +62,18 @@ button:hover{
   position:relative;
 }
 
-/* === READ MORE === */
+/* Baca selengkapnya */
 .readmore{
   margin-top:20px;
-  padding:12px 24px;
-  border:none;
-  border-radius:30px;
-  background:white;
+  background:#fff;
   color:#ff4f87;
-  font-size:15px;
-  cursor:pointer;
-  transition:.2s;
+  position:relative;
+  z-index:10;
+  pointer-events:auto;
 }
 
-.readmore:hover{
-  transform:scale(1.05);
-}
-
-/* === HIDDEN === */
 .hidden{
   display:none;
 }
+
 
