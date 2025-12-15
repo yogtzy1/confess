@@ -15,17 +15,23 @@
     sebenernya a-aku suka sama k-kamu hhe, maaf ya blak blak an gini
   </p>
 
-  <button class="readmore" id="readBtn" onclick="baca()">Baca selengkapnya</button>
+  <button
+    type="button"
+    class="readmore"
+    id="readBtn"
+    onclick="baca()"
+  >
+    Baca selengkapnya
+  </button>
 
   <div class="buttons hidden" id="choice">
-    <button class="yes" onclick="terima()">Ya ❤️</button>
-    <button class="no" id="noBtn">Tidak 😢</button>
+    <button type="button" class="yes" onclick="terima()">Ya ❤️</button>
+    <button type="button" class="no" id="noBtn">Tidak 😢</button>
   </div>
 </div>
 
-
 <!-- AUDIO -->
-<audio id="music" loop>
+<audio id="music" loop preload="auto">
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
