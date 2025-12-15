@@ -17,7 +17,7 @@ function terima(){
   music.play().catch(()=>{});
 
   container.innerHTML = `
-    <h1>TIMAA ACII UDA NEIMA</h1>
+    <h1>TIMAA ACII UDA NERIMA</h1>
     <p>
       akuuu janji ga bakal sia' in kesempatan ini<br>
       akuuu bakal usahain apapun buat kamu,<br>
