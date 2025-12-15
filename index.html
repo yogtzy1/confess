@@ -3,56 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Private ❤️</title>
+<title>Confess ❤️</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LOCK SCREEN -->
-<div class="lock" id="lock">
-  <h2>🔐 Private Access</h2>
-  <input type="password" id="password" placeholder="Masukkan password">
-  <button onclick="unlock()">Buka</button>
-  <p id="error"></p>
+<div class="container" id="confess">
+  <h1>Aku jujur ya…</h1>
+  <p>Aku sayang kamu. Mau nggak kita jalan bareng ke depan? 💕</p>
+
+  <div class="buttons">
+    <button class="yes" onclick="terima()">Ya ❤️</button>
+    <button class="no" id="noBtn">Tidak 😢</button>
+  </div>
 </div>
 
 <!-- AUDIO -->
-<audio id="music" loop preload="auto">
+<audio id="music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-
-<!-- FAKE WA -->
-<div class="wa hidden" id="waNotif">
-  <strong>WhatsApp</strong><br>
-  💬 Kamu: “Dia nanya serius 😳”
-</div>
-
-<!-- COUNTDOWN -->
-<div class="countdown hidden" id="countdown">
-  Jawab sekarang<br>
-  <span id="timer">5</span>
-</div>
-
-<!-- PROGRESS -->
-<div class="progress hidden">
-  <div class="bar" id="bar"></div>
-</div>
-
-<!-- STORY -->
-<div class="story hidden">
-  <div class="slide active">Hai kamu 🤍</div>
-  <div class="slide">Aku sudah lama ingin jujur...</div>
-  <div class="slide">Setiap hari aku selalu mikirin kamu</div>
-  <div class="slide">Tawamu itu rumah buat aku</div>
-  <div class="slide">Aku mau masa depan sama kamu</div>
-  <div class="slide">
-    <h2>Maukah kamu jadi milikku? ❤️</h2>
-    <div class="buttons">
-      <button onclick="yes()">Aku Mau ❤️</button>
-      <button id="noBtn">Maaf 😢</button>
-    </div>
-  </div>
-</div>
 
 <script src="script.js"></script>
 </body>
