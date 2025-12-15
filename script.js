@@ -1,58 +1,84 @@
-const PASSWORD="sayang"; // GANTI
-const lock=document.getElementById("lock");
-const story=document.querySelector(".story");
-const progress=document.querySelector(".progress");
-const bar=document.getElementById("bar");
-const music=document.getElementById("music");
-const slides=document.querySelectorAll(".slide");
-const noBtn=document.getElementById("noBtn");
-const wa=document.getElementById("waNotif");
-const countdown=document.getElementById("countdown");
-const timerEl=document.getElementById("timer");
+const PASSWORD = "sayang"; // GANTI PASSWORD
 
-let index=0,startX=0,kaburCount=0,ubah=false;
+const lock = document.getElementById("lock");
+const story = document.querySelector(".story");
+const progress = document.querySelector(".progress");
+const bar = document.getElementById("bar");
+const music = document.getElementById("music");
+const slides = document.querySelectorAll(".slide");
+const noBtn = document.getElementById("noBtn");
+const wa = document.getElementById("waNotif");
+const countdown = document.getElementById("countdown");
+const timerEl = document.getElementById("timer");
 
-/* UNLOCK */
+let index = 0;
+let startX = 0;
+let kaburCount = 0;
+let ubah = false;
+
+/* === UNLOCK (FIX AUTOPLAY) === */
 function unlock(){
-  if(password.value===PASSWORD){
-    lock.style.display="none";
+  const input = document.getElementById("password").value;
+
+  if(input === PASSWORD){
+    lock.style.display = "none";
     story.classList.remove("hidden");
     progress.classList.remove("hidden");
-    music.play();
+
+    // AUTOPLAY FIX
+    music.currentTime = 0;
+    music.play().catch(() => {
+      document.body.addEventListener("click", () => {
+        music.play();
+      }, { once:true });
+    });
+
     fakeWA();
     startCountdown();
     showSlide(0);
-  }else error.innerText="Password salah 😏";
+  }else{
+    document.getElementById("error").innerText = "Password salah 😏";
+  }
 }
 
 /* SLIDE */
 function showSlide(i){
   slides.forEach(s=>s.classList.remove("active"));
   slides[i].classList.add("active");
-  bar.style.width=((i+1)/slides.length)*100+"%";
+  bar.style.width = ((i+1)/slides.length)*100 + "%";
 }
 
 /* SWIPE */
 document.addEventListener("touchstart",e=>startX=e.touches[0].clientX);
 document.addEventListener("touchend",e=>{
-  let endX=e.changedTouches[0].clientX;
+  let endX = e.changedTouches[0].clientX;
   if(startX-endX>50 && index<slides.length-1) index++;
   else if(endX-startX>50 && index>0) index--;
   showSlide(index);
 });
 
 /* YES */
-function yes(){ ending(); }
+function yes(){
+  ending();
+}
 
-/* NO KABUR */
+/* NO = KABUR */
 noBtn.addEventListener("mouseenter",kabur);
 noBtn.addEventListener("touchstart",kabur);
 
 function kabur(){
   kaburCount++;
-  noBtn.style.transform=`translate(${Math.random()*240-120}px,${Math.random()*240-120}px)`;
-  if(!ubah){noBtn.innerText="Yakin mau nolak?";ubah=true;}
-  if(kaburCount>=5) ending();
+  noBtn.style.transform =
+    `translate(${Math.random()*240-120}px,${Math.random()*240-120}px)`;
+
+  if(!ubah){
+    noBtn.innerText = "Yakin mau nolak?";
+    ubah = true;
+  }
+
+  if(kaburCount >= 5){
+    ending();
+  }
 }
 
 /* FAKE WA */
@@ -64,10 +90,12 @@ function fakeWA(){
 /* COUNTDOWN */
 function startCountdown(){
   countdown.classList.remove("hidden");
-  let t=5;
-  const int=setInterval(()=>{
+  let t = 5;
+  timerEl.innerText = t;
+
+  const int = setInterval(()=>{
     t--;
-    timerEl.innerText=t;
+    timerEl.innerText = t;
     if(t<=0){
       clearInterval(int);
       countdown.classList.add("hidden");
@@ -76,14 +104,13 @@ function startCountdown(){
   },1000);
 }
 
-/* ENDING + CONFETTI + SCREENSHOT */
+/* ENDING */
 function ending(){
-  document.body.innerHTML=`
+  document.body.innerHTML = `
   <div class="ending">
     <h1>💍 Berarti kita jadian ya 💍</h1>
-    <p class="proposal">
-      🌹 Mau nggak…<br>
-      jadi orang yang aku perjuangkan<br>
+    <p>
+      🌹 Mau nggak jadi orang yang aku perjuangkan<br>
       seumur hidup?
     </p>
     <button onclick="download()">📸 Simpan Moment</button>
@@ -106,7 +133,7 @@ function confetti(){
   }
 }
 
-/* FAKE SCREENSHOT DOWNLOAD */
+/* FAKE DOWNLOAD */
 function download(){
   const a=document.createElement("a");
   a.href="data:text/plain,Moment Jadian ❤️";
@@ -115,6 +142,7 @@ function download(){
 }
 
 /* CONFETTI FALL */
-const s=document.createElement("style");
-s.innerHTML="@keyframes fall{to{transform:translateY(110vh)}}";
-document.head.appendChild(s);
+const style=document.createElement("style");
+style.innerHTML="@keyframes fall{to{transform:translateY(110vh)}}";
+document.head.appendChild(style);
+
