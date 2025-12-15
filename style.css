@@ -1,86 +1,146 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+
+body{
+  background:linear-gradient(135deg,#ff6f91,#ffc1cc);
+  height:100vh;
+  overflow:hidden;
+  color:white;
 }
 
-body {
-  background: linear-gradient(135deg, #ff7aa2, #ffd1dc);
-  height: 100vh;
-  overflow: hidden;
+/* LOCK */
+.lock{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
 }
 
-/* Progress bar */
-.progress {
-  position: fixed;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  height: 4px;
-  background: rgba(255,255,255,0.4);
-  border-radius: 10px;
-  z-index: 10;
+.lock input{
+  padding:12px;
+  border-radius:20px;
+  border:none;
+  width:220px;
+  text-align:center;
 }
 
-.bar {
-  height: 100%;
-  width: 0%;
-  background: white;
-  border-radius: 10px;
-  transition: 0.4s;
+.lock button{
+  padding:10px 25px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
 }
 
-/* Story */
-.story {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* WA NOTIF */
+.wa{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#25D366;
+  color:white;
+  padding:12px 18px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+  z-index:20;
+  animation:drop .5s ease;
 }
 
-.slide {
-  display: none;
-  padding: 40px;
-  text-align: center;
-  font-size: 26px;
-  color: white;
-  animation: fade 0.5s ease;
+@keyframes drop{
+  from{transform:translate(-50%,-30px);opacity:0}
+  to{transform:translate(-50%,0);opacity:1}
 }
 
-.slide.active {
-  display: block;
+/* COUNTDOWN */
+.countdown{
+  position:fixed;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.4);
+  padding:15px 25px;
+  border-radius:20px;
+  text-align:center;
+  z-index:20;
 }
 
-.buttons {
-  margin-top: 30px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+.countdown span{
+  font-size:36px;
 }
 
-button {
-  padding: 14px 26px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  background: white;
-  color: #ff4f87;
-  transition: 0.2s;
+/* PROGRESS */
+.progress{
+  position:fixed;
+  top:15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  height:4px;
+  background:rgba(255,255,255,.4);
+  border-radius:10px;
 }
 
-button:hover {
-  transform: scale(1.05);
+.bar{
+  height:100%;
+  width:0%;
+  background:white;
+  border-radius:10px;
 }
 
-/* Tombol kabur */
-#noBtn {
-  position: relative;
+/* STORY */
+.story{
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-@keyframes fade {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+.slide{
+  display:none;
+  font-size:26px;
+  padding:40px;
+  text-align:center;
+  animation:fade .5s ease;
+}
+
+.slide.active{display:block}
+
+.buttons{
+  margin-top:30px;
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+
+button{
+  padding:14px 26px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+#noBtn{position:relative}
+
+.hidden{display:none}
+
+/* ENDING */
+.ending{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+}
+
+.proposal{
+  margin-top:20px;
+  font-size:20px;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
 }
