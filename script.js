@@ -1,14 +1,25 @@
+/* === ELEMENT === */
 const music = document.getElementById("music");
 const noBtn = document.getElementById("noBtn");
 const container = document.getElementById("confess");
 
+/* === STATE === */
 let kaburCount = 0;
+
+/* === BACA SELENGKAPNYA === */
+function baca(){
+  document.getElementById("fullText").classList.remove("hidden");
+  document.getElementById("choice").classList.remove("hidden");
+  document.getElementById("readBtn").style.display = "none";
+}
 
 /* === JIKA YA === */
 function terima(){
+  // Play music (aman karena user interaction)
   music.currentTime = 0;
-  music.play();
+  music.play().catch(() => {});
 
+  // Ganti isi card
   container.innerHTML = `
     <h1>❤️ AKU BAHAGIA ❤️</h1>
     <p>
@@ -21,8 +32,10 @@ function terima(){
 }
 
 /* === JIKA TIDAK = KABUR === */
-noBtn.addEventListener("mouseenter", kabur);
-noBtn.addEventListener("touchstart", kabur);
+if(noBtn){
+  noBtn.addEventListener("mouseenter", kabur);
+  noBtn.addEventListener("touchstart", kabur);
+}
 
 function kabur(){
   kaburCount++;
@@ -36,4 +49,3 @@ function kabur(){
     noBtn.innerText = "Yakin? 😏";
   }
 }
-
