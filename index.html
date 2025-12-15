@@ -3,21 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Untuk Kamu ❤️</title>
+<title>Private ❤️</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="progress">
+<!-- LOCK -->
+<div class="lock" id="lock">
+  <h2>🔐 Private Access</h2>
+  <input type="password" id="password" placeholder="Masukkan password">
+  <button onclick="unlock()">Buka</button>
+  <p id="error"></p>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FAKE WHATSAPP -->
+<div class="wa hidden" id="waNotif">
+  <strong>WhatsApp</strong><br>
+  💬 Kamu: “Eh… dia nanya serius 😳”
+</div>
+
+<!-- COUNTDOWN -->
+<div class="countdown hidden" id="countdown">
+  Jawab sekarang<br>
+  <span id="timer">5</span>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress hidden">
   <div class="bar" id="bar"></div>
 </div>
 
-<div class="story">
+<!-- STORY -->
+<div class="story hidden">
   <div class="slide active">Hai kamu 🤍</div>
   <div class="slide">Aku sudah lama ingin jujur...</div>
-  <div class="slide">Setiap hari aku selalu memikirkan kamu</div>
-  <div class="slide">Tawamu itu candu buat aku</div>
-  <div class="slide">Aku ingin jalan bareng kamu terus</div>
+  <div class="slide">Setiap hari aku selalu mikirin kamu</div>
+  <div class="slide">Tawamu itu rumah buat aku</div>
+  <div class="slide">Aku mau masa depan sama kamu</div>
   <div class="slide">
     <h2>Maukah kamu jadi milikku? ❤️</h2>
     <div class="buttons">
