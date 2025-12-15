@@ -6,142 +6,56 @@
 }
 
 body{
+  height:100vh;
   background:linear-gradient(135deg,#ff6f91,#ffc1cc);
-  height:100vh;
-  overflow:hidden;
-  color:white;
-}
-
-/* LOCK */
-.lock{
-  height:100vh;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
-  gap:15px;
-  text-align:center;
-}
-
-.lock input{
-  padding:12px;
-  border-radius:20px;
-  border:none;
-  width:220px;
-  text-align:center;
-}
-
-.lock button{
-  padding:10px 25px;
-  border:none;
-  border-radius:20px;
-  cursor:pointer;
-}
-
-/* WA NOTIF */
-.wa{
-  position:fixed;
-  top:20px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#25D366;
+  justify-content:center;
   color:white;
-  padding:12px 18px;
-  border-radius:12px;
-  z-index:20;
-  animation:drop .5s ease;
 }
 
-@keyframes drop{
-  from{opacity:0;transform:translate(-50%,-20px)}
-  to{opacity:1;transform:translate(-50%,0)}
-}
-
-/* COUNTDOWN */
-.countdown{
-  position:fixed;
-  bottom:40px;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(0,0,0,.4);
-  padding:15px 25px;
+.container{
+  background:rgba(255,255,255,.15);
+  padding:35px;
   border-radius:20px;
   text-align:center;
-  z-index:20;
-}
-
-.countdown span{
-  font-size:36px;
-}
-
-/* PROGRESS */
-.progress{
-  position:fixed;
-  top:15px;
-  left:50%;
-  transform:translateX(-50%);
   width:90%;
-  height:4px;
-  background:rgba(255,255,255,.4);
-  border-radius:10px;
+  max-width:360px;
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
 }
 
-.bar{
-  height:100%;
-  width:0%;
-  background:white;
-  border-radius:10px;
-  transition:.4s;
-}
+h1{margin-bottom:15px}
 
-/* STORY */
-.story{
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+p{
+  font-size:18px;
+  margin-bottom:25px;
 }
-
-.slide{
-  display:none;
-  font-size:26px;
-  padding:40px;
-  text-align:center;
-  animation:fade .5s ease;
-}
-
-.slide.active{display:block}
 
 .buttons{
-  margin-top:30px;
   display:flex;
   gap:20px;
   justify-content:center;
 }
 
 button{
-  padding:14px 26px;
+  padding:12px 24px;
   border:none;
   border-radius:30px;
   cursor:pointer;
+  font-size:16px;
+  transition:.2s;
 }
 
-#noBtn{position:relative}
-
-.hidden{display:none}
-
-/* ENDING */
-.ending{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:30px;
+.yes{
+  background:#fff;
+  color:#ff4f87;
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateY(25px)}
-  to{opacity:1;transform:translateY(0)}
+.no{
+  background:#ddd;
+  position:relative;
+}
+
+button:hover{
+  transform:scale(1.05);
 }
