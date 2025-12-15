@@ -14,6 +14,7 @@ body{
   color:white;
 }
 
+/* === CARD === */
 .container{
   background:rgba(255,255,255,.15);
   padding:35px;
@@ -24,19 +25,24 @@ body{
   box-shadow:0 20px 40px rgba(0,0,0,.2);
 }
 
-h1{margin-bottom:15px}
+/* === TEXT === */
+h1{
+  margin-bottom:15px;
+}
 
 p{
   font-size:18px;
   margin-bottom:25px;
 }
 
+/* === BUTTON GROUP === */
 .buttons{
   display:flex;
   gap:20px;
   justify-content:center;
 }
 
+/* === ALL BUTTON === */
 button{
   padding:12px 24px;
   border:none;
@@ -46,6 +52,11 @@ button{
   transition:.2s;
 }
 
+button:hover{
+  transform:scale(1.05);
+}
+
+/* === BUTTON VARIANT === */
 .yes{
   background:#fff;
   color:#ff4f87;
@@ -56,6 +67,25 @@ button{
   position:relative;
 }
 
-button:hover{
+/* === READ MORE === */
+.readmore{
+  margin-top:20px;
+  padding:12px 24px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff4f87;
+  font-size:15px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.readmore:hover{
   transform:scale(1.05);
 }
+
+/* === HIDDEN === */
+.hidden{
+  display:none;
+}
+
